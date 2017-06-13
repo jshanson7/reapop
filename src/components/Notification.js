@@ -39,8 +39,8 @@ export class Notification extends Component {
     }).isRequired,
     notification: PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-      title: PropTypes.string,
-      message: PropTypes.string,
+      title: PropTypes.node,
+      message: PropTypes.node,
       image: PropTypes.string,
       status: PropTypes.string.isRequired,
       position: PropTypes.oneOf(mapObjectValues(POSITIONS)),
@@ -51,7 +51,7 @@ export class Notification extends Component {
       closeButton: PropTypes.bool.isRequired,
       buttons: PropTypes.arrayOf(
         PropTypes.shape({
-          name: PropTypes.string.isRequired,
+          name: PropTypes.node.isRequired,
           onClick: PropTypes.func
         })
       ).isRequired,

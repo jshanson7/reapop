@@ -161,9 +161,9 @@ export class Notification extends Component {
 
     return buttons.map(({name, onClick, primary}) => (
       <button key={name} className={className.button} onClick={onClick}>
-        <span className={className.buttonText}>
+        <div className={className.buttonText}>
           {primary ? <b>{name}</b> : name}
-        </span>
+        </div>
       </button>
     ));
   };
@@ -219,16 +219,16 @@ export class Notification extends Component {
             {title
               ?
                 allowHTML
-                  ? <h4 className={className.title} dangerouslySetInnerHTML={this._setHTML(title)}/>
-                  : <h4 className={className.title}>{title}</h4>
+                  ? <div className={className.title} dangerouslySetInnerHTML={this._setHTML(title)}/>
+                  : <div className={className.title}>{title}</div>
               :
                 null
             }
             {message
               ?
                 allowHTML
-                  ? <p className={className.message} dangerouslySetInnerHTML={this._setHTML(message)}/>
-                  : <p className={className.message}>{message}</p>
+                  ? <div className={className.message} dangerouslySetInnerHTML={this._setHTML(message)}/>
+                  : <div className={className.message}>{message}</div>
               :
                 null
             }
